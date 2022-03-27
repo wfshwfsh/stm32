@@ -12,9 +12,9 @@ void lcd1602a_send_cmd(char _cmd)
 	data_u = (_cmd&0xf0);
 	data_l = ((_cmd<<4)&0xf0);
 	data_t[0] = data_u|0x0C;  //en=1, rs=0
-	data_t[1] = data_u|0x08;  //en=0, rs=0
+	data_t[1] = 0x08 ;  //en=0, rs=0
 	data_t[2] = data_l|0x0C;  //en=1, rs=0
-	data_t[3] = data_l|0x08;  //en=0, rs=0
+	data_t[3] = 0x08;  //en=0, rs=0
 	HAL_I2C_Master_Transmit (&hi2c1, SLAVE_ADDRESS_LCD,(uint8_t *) data_t, 4, 100);
 }
 
@@ -25,9 +25,9 @@ void lcd1602a_send_data(char _data)
 	data_u = (_data&0xf0);
 	data_l = ((_data<<4)&0xf0);
 	data_t[0] = data_u|0x0D;  //en=1, rs=1
-	data_t[1] = data_u|0x09;  //en=0, rs=1
+	data_t[1] = 0x09;  //en=0, rs=1
 	data_t[2] = data_l|0x0D;  //en=1, rs=1
-	data_t[3] = data_l|0x09;  //en=0, rs=1
+	data_t[3] = 0x09;  //en=0, rs=1
 	HAL_I2C_Master_Transmit (&hi2c1, SLAVE_ADDRESS_LCD,(uint8_t *) data_t, 4, 100);
 }
 
