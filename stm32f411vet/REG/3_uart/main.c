@@ -1,6 +1,20 @@
 #include <stdio.h>
 #include "stm32f4xx.h"
 
+FILE __stdout;
+
+int fputc(int ch, FILE *f){
+	UART2_SendString((uint8_t *)&ch);
+  return ch;
+}
+
+int ferror(FILE *f){
+  /* Your implementation of ferror(). */
+  return 0;
+}
+
+
+
 void delay(int time)
 {
 	int j;
@@ -14,6 +28,9 @@ int main(void)
 	SysClockConfig();
 	gpio_config();
 	uart2_config();
+	
+	int a = 100;
+	printf("ABDDD %d \n", a);
 	
 	while(1)
 	{

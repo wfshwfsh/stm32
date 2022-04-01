@@ -21,8 +21,8 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.9.0
 Dialog DLL:      TCM.DLL V1.53.0.0
  
 <h2>Project:</h2>
-D:\STM32\git\stm32\stm32f411vet\REG\4_i2c_gy30\i2c_gy30.uvprojx
-Project File Date:  04/01/2022
+E:\STM32\git\stm32\stm32f411vet\REG\4_i2c_gy30\i2c_gy30.uvprojx
+Project File Date:  04/02/2022
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.16', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
@@ -36,170 +36,215 @@ int fputc(int ch, FILE *f){
 main.c(13): warning: unused parameter 'f' [-Wunused-parameter]
 int ferror(FILE *f){
                  ^
-main.c(49): warning: implicit declaration of function 'I2C_Start' is invalid in C99 [-Wimplicit-function-declaration]
-        GY30_CMD_SET(BH_PowerDown);
+main.c(52): warning: implicit declaration of function 'I2C_Start' is invalid in C99 [-Wimplicit-function-declaration]
+        I2C_Start();
         ^
-main.c(35): note: expanded from macro 'GY30_CMD_SET'
+main.c(53): warning: implicit declaration of function 'I2C_Address' is invalid in C99 [-Wimplicit-function-declaration]
+        I2C_Address(Address);
+        ^
+main.c(55): warning: implicit declaration of function 'I2C_Read' is invalid in C99 [-Wimplicit-function-declaration]
+        I2C_Read(Address+1, buf, size);
+        ^
+main.c(56): warning: implicit declaration of function 'I2C_Stop' is invalid in C99 [-Wimplicit-function-declaration]
+        I2C_Stop ();
+        ^
+main.c(50): warning: no previous prototype for function '_gy30_read' [-Wmissing-prototypes]
+void _gy30_read (uint8_t Address, uint8_t *buf, uint8_t size)
+     ^
+main.c(50): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void _gy30_read (uint8_t Address, uint8_t *buf, uint8_t size)
+^
+static 
+main.c(67): warning: implicit declaration of function 'I2C_Start' is invalid in C99 [-Wimplicit-function-declaration]
+        GY30_WRITE(BH_PowerDown);
+        ^
+main.c(35): note: expanded from macro 'GY30_WRITE'
         I2C_Start(); \
         ^
-main.c(49): warning: implicit declaration of function 'I2C_Address' is invalid in C99 [-Wimplicit-function-declaration]
-main.c(36): note: expanded from macro 'GY30_CMD_SET'
+main.c(67): warning: implicit declaration of function 'I2C_Address' is invalid in C99 [-Wimplicit-function-declaration]
+main.c(36): note: expanded from macro 'GY30_WRITE'
         I2C_Address (BH_AddrWrite); \
         ^
-main.c(49): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
-main.c(36): note: expanded from macro 'GY30_CMD_SET'
+main.c(67): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+main.c(36): note: expanded from macro 'GY30_WRITE'
         I2C_Address (BH_AddrWrite); \
                      ^
 main.c(20): note: expanded from macro 'BH_AddrWrite'
 #define BH_AddrWrite ((0b0100011<<1) | 0)
                        ^
-main.c(49): warning: implicit declaration of function 'I2C_Write' is invalid in C99 [-Wimplicit-function-declaration]
-main.c(37): note: expanded from macro 'GY30_CMD_SET'
+main.c(67): warning: implicit declaration of function 'I2C_Write' is invalid in C99 [-Wimplicit-function-declaration]
+main.c(37): note: expanded from macro 'GY30_WRITE'
         I2C_Write(cmd); \
         ^
-main.c(49): warning: implicit declaration of function 'I2C_Stop' is invalid in C99 [-Wimplicit-function-declaration]
-main.c(38): note: expanded from macro 'GY30_CMD_SET'
+main.c(67): warning: implicit declaration of function 'I2C_Stop' is invalid in C99 [-Wimplicit-function-declaration]
+main.c(38): note: expanded from macro 'GY30_WRITE'
         I2C_Stop (); \
         ^
-main.c(49): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-        GY30_CMD_SET(BH_PowerDown);
-                                  ^
-main.c(50): warning: implicit declaration of function 'I2C_Start' is invalid in C99 [-Wimplicit-function-declaration]
-        GY30_CMD_SET(BH_PowerOn);
-        ^
-main.c(35): note: expanded from macro 'GY30_CMD_SET'
-        I2C_Start(); \
-        ^
-main.c(50): warning: implicit declaration of function 'I2C_Address' is invalid in C99 [-Wimplicit-function-declaration]
-main.c(36): note: expanded from macro 'GY30_CMD_SET'
-        I2C_Address (BH_AddrWrite); \
-        ^
-main.c(50): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
-main.c(36): note: expanded from macro 'GY30_CMD_SET'
-        I2C_Address (BH_AddrWrite); \
-                     ^
-main.c(20): note: expanded from macro 'BH_AddrWrite'
-#define BH_AddrWrite ((0b0100011<<1) | 0)
-                       ^
-main.c(50): warning: implicit declaration of function 'I2C_Write' is invalid in C99 [-Wimplicit-function-declaration]
-main.c(37): note: expanded from macro 'GY30_CMD_SET'
-        I2C_Write(cmd); \
-        ^
-main.c(50): warning: implicit declaration of function 'I2C_Stop' is invalid in C99 [-Wimplicit-function-declaration]
-main.c(38): note: expanded from macro 'GY30_CMD_SET'
-        I2C_Stop (); \
-        ^
-main.c(50): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-        GY30_CMD_SET(BH_PowerOn);
+main.c(67): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+        GY30_WRITE(BH_PowerDown);
                                 ^
-main.c(51): warning: implicit declaration of function 'I2C_Start' is invalid in C99 [-Wimplicit-function-declaration]
-        GY30_CMD_SET(BH_Reset);
+main.c(68): warning: implicit declaration of function 'I2C_Start' is invalid in C99 [-Wimplicit-function-declaration]
+        GY30_WRITE(BH_PowerOn);
         ^
-main.c(35): note: expanded from macro 'GY30_CMD_SET'
+main.c(35): note: expanded from macro 'GY30_WRITE'
         I2C_Start(); \
         ^
-main.c(51): warning: implicit declaration of function 'I2C_Address' is invalid in C99 [-Wimplicit-function-declaration]
-main.c(36): note: expanded from macro 'GY30_CMD_SET'
+main.c(68): warning: implicit declaration of function 'I2C_Address' is invalid in C99 [-Wimplicit-function-declaration]
+main.c(36): note: expanded from macro 'GY30_WRITE'
         I2C_Address (BH_AddrWrite); \
         ^
-main.c(51): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
-main.c(36): note: expanded from macro 'GY30_CMD_SET'
+main.c(68): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+main.c(36): note: expanded from macro 'GY30_WRITE'
         I2C_Address (BH_AddrWrite); \
                      ^
 main.c(20): note: expanded from macro 'BH_AddrWrite'
 #define BH_AddrWrite ((0b0100011<<1) | 0)
                        ^
-main.c(51): warning: implicit declaration of function 'I2C_Write' is invalid in C99 [-Wimplicit-function-declaration]
-main.c(37): note: expanded from macro 'GY30_CMD_SET'
+main.c(68): warning: implicit declaration of function 'I2C_Write' is invalid in C99 [-Wimplicit-function-declaration]
+main.c(37): note: expanded from macro 'GY30_WRITE'
         I2C_Write(cmd); \
         ^
-main.c(51): warning: implicit declaration of function 'I2C_Stop' is invalid in C99 [-Wimplicit-function-declaration]
-main.c(38): note: expanded from macro 'GY30_CMD_SET'
+main.c(68): warning: implicit declaration of function 'I2C_Stop' is invalid in C99 [-Wimplicit-function-declaration]
+main.c(38): note: expanded from macro 'GY30_WRITE'
         I2C_Stop (); \
         ^
-main.c(51): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-        GY30_CMD_SET(BH_Reset);
+main.c(68): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+        GY30_WRITE(BH_PowerOn);
                               ^
-main.c(54): warning: implicit declaration of function 'I2C_Start' is invalid in C99 [-Wimplicit-function-declaration]
-        GY30_CMD_SET(BH_ModeH1);
+main.c(69): warning: implicit declaration of function 'I2C_Start' is invalid in C99 [-Wimplicit-function-declaration]
+        GY30_WRITE(BH_Reset);
         ^
-main.c(35): note: expanded from macro 'GY30_CMD_SET'
+main.c(35): note: expanded from macro 'GY30_WRITE'
         I2C_Start(); \
         ^
-main.c(54): warning: implicit declaration of function 'I2C_Address' is invalid in C99 [-Wimplicit-function-declaration]
-main.c(36): note: expanded from macro 'GY30_CMD_SET'
+main.c(69): warning: implicit declaration of function 'I2C_Address' is invalid in C99 [-Wimplicit-function-declaration]
+main.c(36): note: expanded from macro 'GY30_WRITE'
         I2C_Address (BH_AddrWrite); \
         ^
-main.c(54): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
-main.c(36): note: expanded from macro 'GY30_CMD_SET'
+main.c(69): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+main.c(36): note: expanded from macro 'GY30_WRITE'
         I2C_Address (BH_AddrWrite); \
                      ^
 main.c(20): note: expanded from macro 'BH_AddrWrite'
 #define BH_AddrWrite ((0b0100011<<1) | 0)
                        ^
-main.c(54): warning: implicit declaration of function 'I2C_Write' is invalid in C99 [-Wimplicit-function-declaration]
-main.c(37): note: expanded from macro 'GY30_CMD_SET'
+main.c(69): warning: implicit declaration of function 'I2C_Write' is invalid in C99 [-Wimplicit-function-declaration]
+main.c(37): note: expanded from macro 'GY30_WRITE'
         I2C_Write(cmd); \
         ^
-main.c(54): warning: implicit declaration of function 'I2C_Stop' is invalid in C99 [-Wimplicit-function-declaration]
-main.c(38): note: expanded from macro 'GY30_CMD_SET'
+main.c(69): warning: implicit declaration of function 'I2C_Stop' is invalid in C99 [-Wimplicit-function-declaration]
+main.c(38): note: expanded from macro 'GY30_WRITE'
         I2C_Stop (); \
         ^
-main.c(54): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-        GY30_CMD_SET(BH_ModeH1);
-                               ^
-main.c(57): warning: implicit declaration of function 'delay_ms' is invalid in C99 [-Wimplicit-function-declaration]
+main.c(69): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+        GY30_WRITE(BH_Reset);
+                            ^
+main.c(72): warning: implicit declaration of function 'I2C_Start' is invalid in C99 [-Wimplicit-function-declaration]
+        GY30_WRITE(BH_ModeH1);
+        ^
+main.c(35): note: expanded from macro 'GY30_WRITE'
+        I2C_Start(); \
+        ^
+main.c(72): warning: implicit declaration of function 'I2C_Address' is invalid in C99 [-Wimplicit-function-declaration]
+main.c(36): note: expanded from macro 'GY30_WRITE'
+        I2C_Address (BH_AddrWrite); \
+        ^
+main.c(72): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+main.c(36): note: expanded from macro 'GY30_WRITE'
+        I2C_Address (BH_AddrWrite); \
+                     ^
+main.c(20): note: expanded from macro 'BH_AddrWrite'
+#define BH_AddrWrite ((0b0100011<<1) | 0)
+                       ^
+main.c(72): warning: implicit declaration of function 'I2C_Write' is invalid in C99 [-Wimplicit-function-declaration]
+main.c(37): note: expanded from macro 'GY30_WRITE'
+        I2C_Write(cmd); \
+        ^
+main.c(72): warning: implicit declaration of function 'I2C_Stop' is invalid in C99 [-Wimplicit-function-declaration]
+main.c(38): note: expanded from macro 'GY30_WRITE'
+        I2C_Stop (); \
+        ^
+main.c(72): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+        GY30_WRITE(BH_ModeH1);
+                             ^
+main.c(75): warning: implicit declaration of function 'delay_ms' is invalid in C99 [-Wimplicit-function-declaration]
         delay_ms(200);
         ^
-main.c(41): warning: no previous prototype for function 'gy30_init' [-Wmissing-prototypes]
+main.c(60): warning: no previous prototype for function 'gy30_init' [-Wmissing-prototypes]
 void gy30_init(void)
      ^
-main.c(41): note: declare 'static' if the function is not intended to be used outside of this translation unit
+main.c(60): note: declare 'static' if the function is not intended to be used outside of this translation unit
 void gy30_init(void)
 ^
 static 
-main.c(65): warning: implicit declaration of function 'I2C_Read' is invalid in C99 [-Wimplicit-function-declaration]
-        I2C_Read(BH_AddrRead, (uint8_t *)buf, 2);
+main.c(83): warning: implicit declaration of function 'I2C_Start' is invalid in C99 [-Wimplicit-function-declaration]
+        GY30_READ(&buf, 2);
         ^
-main.c(65): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
-        I2C_Read(BH_AddrRead, (uint8_t *)buf, 2);
+main.c(43): note: expanded from macro 'GY30_READ'
+        I2C_Start(); \
+        ^
+main.c(83): warning: implicit declaration of function 'I2C_Address' is invalid in C99 [-Wimplicit-function-declaration]
+main.c(44): note: expanded from macro 'GY30_READ'
+        I2C_Address(BH_AddrWrite); \
+        ^
+main.c(83): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+main.c(44): note: expanded from macro 'GY30_READ'
+        I2C_Address(BH_AddrWrite); \
+                    ^
+main.c(20): note: expanded from macro 'BH_AddrWrite'
+#define BH_AddrWrite ((0b0100011<<1) | 0)
+                       ^
+main.c(83): warning: implicit declaration of function 'I2C_Read' is invalid in C99 [-Wimplicit-function-declaration]
+main.c(46): note: expanded from macro 'GY30_READ'
+        I2C_Read(BH_AddrRead, buf, sz); \
+        ^
+main.c(83): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+main.c(46): note: expanded from macro 'GY30_READ'
+        I2C_Read(BH_AddrRead, buf, sz); \
                  ^
 main.c(19): note: expanded from macro 'BH_AddrRead'
 #define BH_AddrRead  ((0b0100011<<1) | 1)
                        ^
-main.c(60): warning: no previous prototype for function 'gy30_read' [-Wmissing-prototypes]
+main.c(83): warning: implicit declaration of function 'I2C_Stop' is invalid in C99 [-Wimplicit-function-declaration]
+main.c(47): note: expanded from macro 'GY30_READ'
+        I2C_Stop (); \
+        ^
+main.c(83): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+        GY30_READ(&buf, 2);
+                          ^
+main.c(78): warning: no previous prototype for function 'gy30_read' [-Wmissing-prototypes]
 double gy30_read(void)
        ^
-main.c(60): note: declare 'static' if the function is not intended to be used outside of this translation unit
+main.c(78): note: declare 'static' if the function is not intended to be used outside of this translation unit
 double gy30_read(void)
 ^
 static 
-main.c(79): warning: implicit declaration of function 'SysClockConfig' is invalid in C99 [-Wimplicit-function-declaration]
+main.c(98): warning: implicit declaration of function 'SysClockConfig' is invalid in C99 [-Wimplicit-function-declaration]
         SysClockConfig();
         ^
-main.c(80): warning: implicit declaration of function 'gpio_config' is invalid in C99 [-Wimplicit-function-declaration]
+main.c(99): warning: implicit declaration of function 'gpio_config' is invalid in C99 [-Wimplicit-function-declaration]
         gpio_config();
         ^
-main.c(81): warning: implicit declaration of function 'tim2_config' is invalid in C99 [-Wimplicit-function-declaration]
+main.c(100): warning: implicit declaration of function 'tim2_config' is invalid in C99 [-Wimplicit-function-declaration]
         tim2_config();
         ^
-main.c(82): warning: implicit declaration of function 'uart2_config' is invalid in C99 [-Wimplicit-function-declaration]
+main.c(101): warning: implicit declaration of function 'uart2_config' is invalid in C99 [-Wimplicit-function-declaration]
         uart2_config();
         ^
-main.c(83): warning: implicit declaration of function 'I2C_Config' is invalid in C99 [-Wimplicit-function-declaration]
+main.c(102): warning: implicit declaration of function 'I2C_Config' is invalid in C99 [-Wimplicit-function-declaration]
         I2C_Config();
         ^
-main.c(85): warning: implicit declaration of function 'UART2_SendString' is invalid in C99 [-Wimplicit-function-declaration]
+main.c(104): warning: implicit declaration of function 'UART2_SendString' is invalid in C99 [-Wimplicit-function-declaration]
         UART2_SendString("Hello World\n");
         ^
-main.c(101): warning: implicit declaration of function 'delay_ms' is invalid in C99 [-Wimplicit-function-declaration]
+main.c(121): warning: implicit declaration of function 'delay_ms' is invalid in C99 [-Wimplicit-function-declaration]
                 delay_ms(1000);
                 ^
-39 warnings generated.
+49 warnings generated.
 compiling main.c...
 linking...
-Program Size: Code=1824 RO-data=424 RW-data=0 ZI-data=1720  
-".\Objects\buttonLed.axf" - 0 Error(s), 39 Warning(s).
+Program Size: Code=6748 RO-data=600 RW-data=0 ZI-data=1720  
+".\Objects\buttonLed.axf" - 0 Error(s), 49 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -217,20 +262,20 @@ Package Vendor: Keil
 
 <h2>Collection of Component include folders:</h2>
   .\RTE\_Target_1
-  C:\Users\willchen\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include
-  C:\Users\willchen\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.16.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include
+  C:\Users\wanna\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include
+  C:\Users\wanna\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.16.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include
 
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.5.0
 
    * Component: Keil::Device:Startup:2.6.3
-      Source file:   MDK\Device\Source\ARM\STM32F411xx_OPT.s
       Source file:   MDK\Device\Source\ARM\STM32F4xx_OTP.s
       Include file:  Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
       Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f411xe.s
+      Source file:   MDK\Device\Source\ARM\STM32F411xx_OPT.s
       Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:02
 </pre>
 </body>
 </html>
