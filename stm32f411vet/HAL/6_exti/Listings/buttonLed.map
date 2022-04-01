@@ -128,6 +128,15 @@ Section Cross References
     stm32f4xx_hal_cortex.o(.text.HAL_SYSTICK_IRQHandler) refers to stm32f4xx_hal_cortex.o(.text.HAL_SYSTICK_Callback) for HAL_SYSTICK_Callback
     stm32f4xx_hal_cortex.o(.ARM.exidx.text.HAL_SYSTICK_IRQHandler) refers to stm32f4xx_hal_cortex.o(.text.HAL_SYSTICK_IRQHandler) for [Anonymous Symbol]
     stm32f4xx_hal_cortex.o(.ARM.exidx.text.HAL_SYSTICK_Callback) refers to stm32f4xx_hal_cortex.o(.text.HAL_SYSTICK_Callback) for [Anonymous Symbol]
+    stm32f4xx_hal_exti.o(.ARM.exidx.text.HAL_EXTI_SetConfigLine) refers to stm32f4xx_hal_exti.o(.text.HAL_EXTI_SetConfigLine) for [Anonymous Symbol]
+    stm32f4xx_hal_exti.o(.ARM.exidx.text.HAL_EXTI_GetConfigLine) refers to stm32f4xx_hal_exti.o(.text.HAL_EXTI_GetConfigLine) for [Anonymous Symbol]
+    stm32f4xx_hal_exti.o(.ARM.exidx.text.HAL_EXTI_ClearConfigLine) refers to stm32f4xx_hal_exti.o(.text.HAL_EXTI_ClearConfigLine) for [Anonymous Symbol]
+    stm32f4xx_hal_exti.o(.ARM.exidx.text.HAL_EXTI_RegisterCallback) refers to stm32f4xx_hal_exti.o(.text.HAL_EXTI_RegisterCallback) for [Anonymous Symbol]
+    stm32f4xx_hal_exti.o(.ARM.exidx.text.HAL_EXTI_GetHandle) refers to stm32f4xx_hal_exti.o(.text.HAL_EXTI_GetHandle) for [Anonymous Symbol]
+    stm32f4xx_hal_exti.o(.ARM.exidx.text.HAL_EXTI_IRQHandler) refers to stm32f4xx_hal_exti.o(.text.HAL_EXTI_IRQHandler) for [Anonymous Symbol]
+    stm32f4xx_hal_exti.o(.ARM.exidx.text.HAL_EXTI_GetPending) refers to stm32f4xx_hal_exti.o(.text.HAL_EXTI_GetPending) for [Anonymous Symbol]
+    stm32f4xx_hal_exti.o(.ARM.exidx.text.HAL_EXTI_ClearPending) refers to stm32f4xx_hal_exti.o(.text.HAL_EXTI_ClearPending) for [Anonymous Symbol]
+    stm32f4xx_hal_exti.o(.ARM.exidx.text.HAL_EXTI_GenerateSWI) refers to stm32f4xx_hal_exti.o(.text.HAL_EXTI_GenerateSWI) for [Anonymous Symbol]
     stm32f4xx_hal_gpio.o(.ARM.exidx.text.HAL_GPIO_Init) refers to stm32f4xx_hal_gpio.o(.text.HAL_GPIO_Init) for [Anonymous Symbol]
     stm32f4xx_hal_gpio.o(.ARM.exidx.text.HAL_GPIO_DeInit) refers to stm32f4xx_hal_gpio.o(.text.HAL_GPIO_DeInit) for [Anonymous Symbol]
     stm32f4xx_hal_gpio.o(.ARM.exidx.text.HAL_GPIO_ReadPin) refers to stm32f4xx_hal_gpio.o(.text.HAL_GPIO_ReadPin) for [Anonymous Symbol]
@@ -236,15 +245,6 @@ Section Cross References
     system_stm32f4xx.o(.text.SystemCoreClockUpdate) refers to system_stm32f4xx.o(.data.SystemCoreClock) for SystemCoreClock
     system_stm32f4xx.o(.text.SystemCoreClockUpdate) refers to system_stm32f4xx.o(.rodata.AHBPrescTable) for AHBPrescTable
     system_stm32f4xx.o(.ARM.exidx.text.SystemCoreClockUpdate) refers to system_stm32f4xx.o(.text.SystemCoreClockUpdate) for [Anonymous Symbol]
-    stm32f4xx_hal_exti.o(.ARM.exidx.text.HAL_EXTI_SetConfigLine) refers to stm32f4xx_hal_exti.o(.text.HAL_EXTI_SetConfigLine) for [Anonymous Symbol]
-    stm32f4xx_hal_exti.o(.ARM.exidx.text.HAL_EXTI_GetConfigLine) refers to stm32f4xx_hal_exti.o(.text.HAL_EXTI_GetConfigLine) for [Anonymous Symbol]
-    stm32f4xx_hal_exti.o(.ARM.exidx.text.HAL_EXTI_ClearConfigLine) refers to stm32f4xx_hal_exti.o(.text.HAL_EXTI_ClearConfigLine) for [Anonymous Symbol]
-    stm32f4xx_hal_exti.o(.ARM.exidx.text.HAL_EXTI_RegisterCallback) refers to stm32f4xx_hal_exti.o(.text.HAL_EXTI_RegisterCallback) for [Anonymous Symbol]
-    stm32f4xx_hal_exti.o(.ARM.exidx.text.HAL_EXTI_GetHandle) refers to stm32f4xx_hal_exti.o(.text.HAL_EXTI_GetHandle) for [Anonymous Symbol]
-    stm32f4xx_hal_exti.o(.ARM.exidx.text.HAL_EXTI_IRQHandler) refers to stm32f4xx_hal_exti.o(.text.HAL_EXTI_IRQHandler) for [Anonymous Symbol]
-    stm32f4xx_hal_exti.o(.ARM.exidx.text.HAL_EXTI_GetPending) refers to stm32f4xx_hal_exti.o(.text.HAL_EXTI_GetPending) for [Anonymous Symbol]
-    stm32f4xx_hal_exti.o(.ARM.exidx.text.HAL_EXTI_ClearPending) refers to stm32f4xx_hal_exti.o(.text.HAL_EXTI_ClearPending) for [Anonymous Symbol]
-    stm32f4xx_hal_exti.o(.ARM.exidx.text.HAL_EXTI_GenerateSWI) refers to stm32f4xx_hal_exti.o(.text.HAL_EXTI_GenerateSWI) for [Anonymous Symbol]
     __main.o(!!!main) refers to __rtentry.o(.ARM.Collect$$rtentry$$00000000) for __rt_entry
     __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) for __rt_entry_li
     __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) for __rt_entry_main
@@ -488,6 +488,25 @@ Removing Unused input sections from the image.
     Removing stm32f4xx_hal_cortex.o(.text.HAL_SYSTICK_Callback), (2 bytes).
     Removing stm32f4xx_hal_cortex.o(.ARM.exidx.text.HAL_SYSTICK_Callback), (8 bytes).
     Removing stm32f4xx_hal_crc.o(.text), (0 bytes).
+    Removing stm32f4xx_hal_exti.o(.text), (0 bytes).
+    Removing stm32f4xx_hal_exti.o(.text.HAL_EXTI_SetConfigLine), (180 bytes).
+    Removing stm32f4xx_hal_exti.o(.ARM.exidx.text.HAL_EXTI_SetConfigLine), (8 bytes).
+    Removing stm32f4xx_hal_exti.o(.text.HAL_EXTI_GetConfigLine), (154 bytes).
+    Removing stm32f4xx_hal_exti.o(.ARM.exidx.text.HAL_EXTI_GetConfigLine), (8 bytes).
+    Removing stm32f4xx_hal_exti.o(.text.HAL_EXTI_ClearConfigLine), (136 bytes).
+    Removing stm32f4xx_hal_exti.o(.ARM.exidx.text.HAL_EXTI_ClearConfigLine), (8 bytes).
+    Removing stm32f4xx_hal_exti.o(.text.HAL_EXTI_RegisterCallback), (12 bytes).
+    Removing stm32f4xx_hal_exti.o(.ARM.exidx.text.HAL_EXTI_RegisterCallback), (8 bytes).
+    Removing stm32f4xx_hal_exti.o(.text.HAL_EXTI_GetHandle), (12 bytes).
+    Removing stm32f4xx_hal_exti.o(.ARM.exidx.text.HAL_EXTI_GetHandle), (8 bytes).
+    Removing stm32f4xx_hal_exti.o(.text.HAL_EXTI_IRQHandler), (44 bytes).
+    Removing stm32f4xx_hal_exti.o(.ARM.exidx.text.HAL_EXTI_IRQHandler), (8 bytes).
+    Removing stm32f4xx_hal_exti.o(.text.HAL_EXTI_GetPending), (28 bytes).
+    Removing stm32f4xx_hal_exti.o(.ARM.exidx.text.HAL_EXTI_GetPending), (8 bytes).
+    Removing stm32f4xx_hal_exti.o(.text.HAL_EXTI_ClearPending), (24 bytes).
+    Removing stm32f4xx_hal_exti.o(.ARM.exidx.text.HAL_EXTI_ClearPending), (8 bytes).
+    Removing stm32f4xx_hal_exti.o(.text.HAL_EXTI_GenerateSWI), (24 bytes).
+    Removing stm32f4xx_hal_exti.o(.ARM.exidx.text.HAL_EXTI_GenerateSWI), (8 bytes).
     Removing stm32f4xx_hal_gpio.o(.text), (0 bytes).
     Removing stm32f4xx_hal_gpio.o(.ARM.exidx.text.HAL_GPIO_Init), (8 bytes).
     Removing stm32f4xx_hal_gpio.o(.text.HAL_GPIO_DeInit), (262 bytes).
@@ -605,25 +624,6 @@ Removing Unused input sections from the image.
     Removing system_stm32f4xx.o(.text.SystemCoreClockUpdate), (126 bytes).
     Removing system_stm32f4xx.o(.ARM.exidx.text.SystemCoreClockUpdate), (8 bytes).
     Removing system_stm32f4xx.o(.rodata.APBPrescTable), (8 bytes).
-    Removing stm32f4xx_hal_exti.o(.text), (0 bytes).
-    Removing stm32f4xx_hal_exti.o(.text.HAL_EXTI_SetConfigLine), (180 bytes).
-    Removing stm32f4xx_hal_exti.o(.ARM.exidx.text.HAL_EXTI_SetConfigLine), (8 bytes).
-    Removing stm32f4xx_hal_exti.o(.text.HAL_EXTI_GetConfigLine), (154 bytes).
-    Removing stm32f4xx_hal_exti.o(.ARM.exidx.text.HAL_EXTI_GetConfigLine), (8 bytes).
-    Removing stm32f4xx_hal_exti.o(.text.HAL_EXTI_ClearConfigLine), (136 bytes).
-    Removing stm32f4xx_hal_exti.o(.ARM.exidx.text.HAL_EXTI_ClearConfigLine), (8 bytes).
-    Removing stm32f4xx_hal_exti.o(.text.HAL_EXTI_RegisterCallback), (12 bytes).
-    Removing stm32f4xx_hal_exti.o(.ARM.exidx.text.HAL_EXTI_RegisterCallback), (8 bytes).
-    Removing stm32f4xx_hal_exti.o(.text.HAL_EXTI_GetHandle), (12 bytes).
-    Removing stm32f4xx_hal_exti.o(.ARM.exidx.text.HAL_EXTI_GetHandle), (8 bytes).
-    Removing stm32f4xx_hal_exti.o(.text.HAL_EXTI_IRQHandler), (44 bytes).
-    Removing stm32f4xx_hal_exti.o(.ARM.exidx.text.HAL_EXTI_IRQHandler), (8 bytes).
-    Removing stm32f4xx_hal_exti.o(.text.HAL_EXTI_GetPending), (28 bytes).
-    Removing stm32f4xx_hal_exti.o(.ARM.exidx.text.HAL_EXTI_GetPending), (8 bytes).
-    Removing stm32f4xx_hal_exti.o(.text.HAL_EXTI_ClearPending), (24 bytes).
-    Removing stm32f4xx_hal_exti.o(.ARM.exidx.text.HAL_EXTI_ClearPending), (8 bytes).
-    Removing stm32f4xx_hal_exti.o(.text.HAL_EXTI_GenerateSWI), (24 bytes).
-    Removing stm32f4xx_hal_exti.o(.ARM.exidx.text.HAL_EXTI_GenerateSWI), (8 bytes).
 
 262 unused section(s) (total 5496 bytes) removed from the image.
 
@@ -1038,7 +1038,7 @@ Memory Map of the image
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x08000000   0x08000000   0x00000198   Data   RO          354    RESET               startup_stm32f411xe.o
+    0x08000000   0x08000000   0x00000198   Data   RO          380    RESET               startup_stm32f411xe.o
     0x08000198   0x08000198   0x00000008   Code   RO          410  * !!!main             c_w.l(__main.o)
     0x080001a0   0x080001a0   0x00000034   Code   RO          583    !!!scatter          c_w.l(__scatter.o)
     0x080001d4   0x080001d4   0x0000001a   Code   RO          585    !!handler_copy      c_w.l(__scatter_copy.o)
@@ -1086,7 +1086,7 @@ Memory Map of the image
     0x0800022c   0x0800022c   0x00000004   Code   RO          510    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
     0x08000230   0x08000230   0x00000006   Code   RO          511    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
     0x08000236   0x08000236   0x00000002   PAD
-    0x08000238   0x08000238   0x00000040   Code   RO          355  * .text               startup_stm32f411xe.o
+    0x08000238   0x08000238   0x00000040   Code   RO          381  * .text               startup_stm32f411xe.o
     0x08000278   0x08000278   0x000000f0   Code   RO          404    .text               c_w.l(lludivv7m.o)
     0x08000368   0x08000368   0x0000004e   Code   RO          406    .text               c_w.l(rt_memclr_w.o)
     0x080003b6   0x080003b6   0x00000006   Code   RO          408    .text               c_w.l(heapauxi.o)
@@ -1106,12 +1106,12 @@ Memory Map of the image
     0x08000444   0x08000444   0x00000028   Code   RO           75    .text.HAL_Delay     stm32f4xx_hal.o
     0x0800046c   0x0800046c   0x0000001a   Code   RO           11    .text.HAL_GPIO_EXTI_Callback  main.o
     0x08000486   0x08000486   0x00000002   PAD
-    0x08000488   0x08000488   0x0000001a   Code   RO          205    .text.HAL_GPIO_EXTI_IRQHandler  stm32f4xx_hal_gpio.o
+    0x08000488   0x08000488   0x0000001a   Code   RO          231    .text.HAL_GPIO_EXTI_IRQHandler  stm32f4xx_hal_gpio.o
     0x080004a2   0x080004a2   0x00000002   PAD
-    0x080004a4   0x080004a4   0x00000196   Code   RO          193    .text.HAL_GPIO_Init  stm32f4xx_hal_gpio.o
+    0x080004a4   0x080004a4   0x00000196   Code   RO          219    .text.HAL_GPIO_Init  stm32f4xx_hal_gpio.o
     0x0800063a   0x0800063a   0x00000002   PAD
-    0x0800063c   0x0800063c   0x00000010   Code   RO          201    .text.HAL_GPIO_TogglePin  stm32f4xx_hal_gpio.o
-    0x0800064c   0x0800064c   0x0000000a   Code   RO          199    .text.HAL_GPIO_WritePin  stm32f4xx_hal_gpio.o
+    0x0800063c   0x0800063c   0x00000010   Code   RO          227    .text.HAL_GPIO_TogglePin  stm32f4xx_hal_gpio.o
+    0x0800064c   0x0800064c   0x0000000a   Code   RO          225    .text.HAL_GPIO_WritePin  stm32f4xx_hal_gpio.o
     0x08000656   0x08000656   0x00000002   PAD
     0x08000658   0x08000658   0x0000000c   Code   RO           67    .text.HAL_GetTick   stm32f4xx_hal.o
     0x08000664   0x08000664   0x0000001a   Code   RO           65    .text.HAL_IncTick   stm32f4xx_hal.o
@@ -1119,15 +1119,15 @@ Memory Map of the image
     0x08000680   0x08000680   0x00000036   Code   RO           55    .text.HAL_Init      stm32f4xx_hal.o
     0x080006b6   0x080006b6   0x00000002   PAD
     0x080006b8   0x080006b8   0x00000050   Code   RO           57    .text.HAL_InitTick  stm32f4xx_hal.o
-    0x08000708   0x08000708   0x00000038   Code   RO          345    .text.HAL_MspInit   stm32f4xx_hal_msp.o
+    0x08000708   0x08000708   0x00000038   Code   RO          371    .text.HAL_MspInit   stm32f4xx_hal_msp.o
     0x08000740   0x08000740   0x00000008   Code   RO          132    .text.HAL_NVIC_EnableIRQ  stm32f4xx_hal_cortex.o
     0x08000748   0x08000748   0x0000001e   Code   RO          124    .text.HAL_NVIC_SetPriority  stm32f4xx_hal_cortex.o
     0x08000766   0x08000766   0x00000002   PAD
     0x08000768   0x08000768   0x00000008   Code   RO          120    .text.HAL_NVIC_SetPriorityGrouping  stm32f4xx_hal_cortex.o
-    0x08000770   0x08000770   0x00000160   Code   RO          291    .text.HAL_RCC_ClockConfig  stm32f4xx_hal_rcc.o
-    0x080008d0   0x080008d0   0x0000006a   Code   RO          293    .text.HAL_RCC_GetSysClockFreq  stm32f4xx_hal_rcc.o
+    0x08000770   0x08000770   0x00000160   Code   RO          317    .text.HAL_RCC_ClockConfig  stm32f4xx_hal_rcc.o
+    0x080008d0   0x080008d0   0x0000006a   Code   RO          319    .text.HAL_RCC_GetSysClockFreq  stm32f4xx_hal_rcc.o
     0x0800093a   0x0800093a   0x00000002   PAD
-    0x0800093c   0x0800093c   0x00000348   Code   RO          289    .text.HAL_RCC_OscConfig  stm32f4xx_hal_rcc.o
+    0x0800093c   0x0800093c   0x00000348   Code   RO          315    .text.HAL_RCC_OscConfig  stm32f4xx_hal_rcc.o
     0x08000c84   0x08000c84   0x00000008   Code   RO          144    .text.HAL_SYSTICK_Config  stm32f4xx_hal_cortex.o
     0x08000c8c   0x08000c8c   0x00000002   Code   RO           30    .text.HardFault_Handler  stm32f4xx_it.o
     0x08000c8e   0x08000c8e   0x00000002   PAD
@@ -1145,7 +1145,7 @@ Memory Map of the image
     0x08000d8e   0x08000d8e   0x00000002   PAD
     0x08000d90   0x08000d90   0x00000008   Code   RO           44    .text.SysTick_Handler  stm32f4xx_it.o
     0x08000d98   0x08000d98   0x00000094   Code   RO           15    .text.SystemClock_Config  main.o
-    0x08000e2c   0x08000e2c   0x00000012   Code   RO          362    .text.SystemInit    system_stm32f4xx.o
+    0x08000e2c   0x08000e2c   0x00000012   Code   RO          388    .text.SystemInit    system_stm32f4xx.o
     0x08000e3e   0x08000e3e   0x00000002   PAD
     0x08000e40   0x08000e40   0x00000002   Code   RO           36    .text.UsageFault_Handler  stm32f4xx_it.o
     0x08000e42   0x08000e42   0x00000002   PAD
@@ -1156,7 +1156,7 @@ Memory Map of the image
     0x08000e98   0x08000e98   0x00000020   Code   RO          122    .text.__NVIC_SetPriorityGrouping  stm32f4xx_hal_cortex.o
     0x08000eb8   0x08000eb8   0x00000016   Code   RO           13    .text.main          main.o
     0x08000ece   0x08000ece   0x0000001a   Code   RO          521    x$fpl$fpinit        fz_wm.l(fpinit.o)
-    0x08000ee8   0x08000ee8   0x00000010   Data   RO          367    .rodata.AHBPrescTable  system_stm32f4xx.o
+    0x08000ee8   0x08000ee8   0x00000010   Data   RO          393    .rodata.AHBPrescTable  system_stm32f4xx.o
     0x08000ef8   0x08000ef8   0x00000020   Data   RO          582    Region$$Table       anon$$obj.o
 
 
@@ -1164,7 +1164,7 @@ Memory Map of the image
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x08000f18   0x00000004   Data   RW          366    .data.SystemCoreClock  system_stm32f4xx.o
+    0x20000000   0x08000f18   0x00000004   Data   RW          392    .data.SystemCoreClock  system_stm32f4xx.o
     0x20000004   0x08000f1c   0x00000001   Data   RW          110    .data.uwTickFreq    stm32f4xx_hal.o
     0x20000005   0x08000f1d   0x00000003   PAD
     0x20000008   0x08000f20   0x00000004   Data   RW          109    .data.uwTickPrio    stm32f4xx_hal.o
@@ -1177,8 +1177,8 @@ Memory Map of the image
     0x20000010        -       0x00000060   Zero   RW          449    .bss                c_w.l(libspace.o)
     0x20000070        -       0x00000004   Zero   RW          111    .bss.uwTick         stm32f4xx_hal.o
     0x20000074   0x08000f24   0x00000004   PAD
-    0x20000078        -       0x00000200   Zero   RW          353    HEAP                startup_stm32f411xe.o
-    0x20000278        -       0x00000400   Zero   RW          352    STACK               startup_stm32f411xe.o
+    0x20000078        -       0x00000200   Zero   RW          379    HEAP                startup_stm32f411xe.o
+    0x20000278        -       0x00000400   Zero   RW          378    STACK               startup_stm32f411xe.o
 
 
 ==============================================================================
