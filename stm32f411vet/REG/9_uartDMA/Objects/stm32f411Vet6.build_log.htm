@@ -1,0 +1,150 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: £gVision V5.36.0.0
+Copyright (C) 2021 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Will Chen, Mirle, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.36.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.16
+Assembler:       Armasm.exe V6.16
+Linker/Locator:  ArmLink.exe V6.16
+Library Manager: ArmAr.exe V6.16
+Hex Converter:   FromElf.exe V6.16
+CPU DLL:         SARMCM3.DLL V5.36.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.9.0
+Dialog DLL:      TCM.DLL V1.53.0.0
+ 
+<h2>Project:</h2>
+D:\STM32\git\stm32\stm32f411vet\REG\8_uartDMA\uartDMA.uvprojx
+Project File Date:  04/06/2022
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.16', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Build target 'Target 1'
+main.c(8): warning: implicit declaration of function 'UART2_SendString' is invalid in C99 [-Wimplicit-function-declaration]
+        UART2_SendString((uint8_t *)&ch);
+        ^
+main.c(7): warning: unused parameter 'f' [-Wunused-parameter]
+int fputc(int ch, FILE *f){
+                        ^
+main.c(12): warning: unused parameter 'f' [-Wunused-parameter]
+int ferror(FILE *f){
+                 ^
+main.c(19): warning: no previous prototype for function 'delay' [-Wmissing-prototypes]
+void delay(int time)
+     ^
+main.c(19): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void delay(int time)
+^
+static 
+main.c(31): warning: no previous extern declaration for non-static variable 'indx' [-Wmissing-variable-declarations]
+uint8_t indx = 0;
+        ^
+main.c(31): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint8_t indx = 0;
+^
+main.c(32): warning: no previous extern declaration for non-static variable 'enter_isr' [-Wmissing-variable-declarations]
+uint8_t enter_isr = 0;
+        ^
+main.c(32): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint8_t enter_isr = 0;
+^
+main.c(34): warning: no previous prototype for function 'DMA1_Stream5_IRQHandler' [-Wmissing-prototypes]
+void DMA1_Stream5_IRQHandler (void)
+     ^
+main.c(34): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void DMA1_Stream5_IRQHandler (void)
+^
+static 
+main.c(71): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        DMA1_Stream5->CR &= ~(3<<6);   // Peripheral to Mem
+                         ~~ ^~~~~~~
+main.c(80): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        DMA1_Stream5->CR &= ~(3<<11);  // 00 : 8 Bit Data
+                         ~~ ^~~~~~~~
+main.c(83): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        DMA1_Stream5->CR &= ~(3<<13);  // 00 : 8 Bit Data
+                         ~~ ^~~~~~~~
+main.c(86): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        DMA1_Stream5->CR &= ~(3<<16);  // PL = 0
+                         ~~ ^~~~~~~~
+main.c(60): warning: no previous prototype for function 'DMA_Init' [-Wmissing-prototypes]
+void DMA_Init (void)
+     ^
+main.c(60): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void DMA_Init (void)
+^
+static 
+main.c(93): warning: no previous prototype for function 'DMA_Config' [-Wmissing-prototypes]
+void DMA_Config (uint32_t srcAdd, uint32_t destAdd, uint16_t datasize)
+     ^
+main.c(93): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void DMA_Config (uint32_t srcAdd, uint32_t destAdd, uint16_t datasize)
+^
+static 
+main.c(123): warning: implicit declaration of function 'SysClockConfig' is invalid in C99 [-Wimplicit-function-declaration]
+        SysClockConfig();
+        ^
+main.c(125): warning: implicit declaration of function 'uart2_config' is invalid in C99 [-Wimplicit-function-declaration]
+        uart2_config();
+        ^
+main.c(136): warning: unused variable 'a' [-Wunused-variable]
+        int a = 100;
+            ^
+main.c(28): warning: no previous extern declaration for non-static variable 'RxBuf' [-Wmissing-variable-declarations]
+uint8_t RxBuf[20];
+        ^
+main.c(28): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint8_t RxBuf[20];
+^
+main.c(29): warning: no previous extern declaration for non-static variable 'MainBuf' [-Wmissing-variable-declarations]
+uint8_t MainBuf [50];
+        ^
+main.c(29): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint8_t MainBuf [50];
+^
+18 warnings generated.
+compiling main.c...
+linking...
+Program Size: Code=1108 RO-data=424 RW-data=0 ZI-data=1792  
+".\Objects\stm32f411Vet6.axf" - 0 Error(s), 18 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.8.0.pack
+                ARM.CMSIS.5.8.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.5.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F4xx_DFP.2.16.0.pack
+                Keil.STM32F4xx_DFP.2.16.0
+                STMicroelectronics STM32F4 Series Device Support, Drivers and Examples
+   * Component: Startup Version: 2.6.3
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_Target_1
+  C:\Users\willchen\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include
+  C:\Users\willchen\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.16.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.5.0
+
+   * Component: Keil::Device:Startup:2.6.3
+      Source file:   MDK\Device\Source\ARM\STM32F411xx_OPT.s
+      Source file:   MDK\Device\Source\ARM\STM32F4xx_OTP.s
+      Include file:  Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
+      Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f411xe.s
+      Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>
