@@ -1,0 +1,46 @@
+//this note will disable the interrupts, NOT pending interrupts!!!
+
+USART2_IRQHandler
+    HAL_UART_IRQHandler
+        UART_Receive_IT(huart);
+            ...
+
+
+            /* Disable the UART Data Register not empty Interrupt */
+            __HAL_UART_DISABLE_IT(huart, UART_IT_RXNE);
+
+            /* Disable the UART Parity Error Interrupt */
+            __HAL_UART_DISABLE_IT(huart, UART_IT_PE);
+
+            /* Disable the UART Error Interrupt: (Frame error, noise error, overrun error) */
+            __HAL_UART_DISABLE_IT(huart, UART_IT_ERR);
+
+#define __HAL_UART_DISABLE_IT(__HANDLE__, __INTERRUPT__)  ((((__INTERRUPT__) >> 28U) == UART_CR1_REG_INDEX)? ((__HANDLE__)->Instance->CR1 &= ~((__INTERRUPT__) & UART_IT_MASK)): \
+                                                           (((__INTERRUPT__) >> 28U) == UART_CR2_REG_INDEX)? ((__HANDLE__)->Instance->CR2 &= ~((__INTERRUPT__) & UART_IT_MASK)): \
+                                                           ((__HANDLE__)->Instance->CR3 &= ~ ((__INTERRUPT__) & UART_IT_MASK)))
+
+      
+      #define UART_IT_MASK                     0x0000FFFFU
+
+
+    HAL_UART_Receive_IT
+        UART_Start_Receive_IT
+            ...
+            
+            /* Enable the UART Parity Error Interrupt */
+            __HAL_UART_ENABLE_IT(huart, UART_IT_PE);
+
+            /* Enable the UART Error Interrupt: (Frame error, noise error, overrun error) */
+            __HAL_UART_ENABLE_IT(huart, UART_IT_ERR);
+
+            /* Enable the UART Data Register not empty Interrupt */
+            __HAL_UART_ENABLE_IT(huart, UART_IT_RXNE);
+            
+            
+            
+            #define __HAL_UART_ENABLE_IT(__HANDLE__, __INTERRUPT__)   ((((__INTERRUPT__) >> 28U) == UART_CR1_REG_INDEX)? ((__HANDLE__)->Instance->CR1 |= ((__INTERRUPT__) & UART_IT_MASK)): \
+                                                           (((__INTERRUPT__) >> 28U) == UART_CR2_REG_INDEX)? ((__HANDLE__)->Instance->CR2 |= ((__INTERRUPT__) & UART_IT_MASK)): \
+                                                           ((__HANDLE__)->Instance->CR3 |= ((__INTERRUPT__) & UART_IT_MASK)))
+
+            
+    

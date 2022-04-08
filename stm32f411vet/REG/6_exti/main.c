@@ -18,7 +18,7 @@ void EXTI1_IRQHandler(void)
 	2. Clear the Interrupt Pending Bit
 	
 	********************************************************/
-	if (EXTI->PR & (1<<1))    // If the PA7 triggered the interrupt
+	if (EXTI->PR & (1<<1))    // If the PA1 triggered the interrupt
 	{
 		flag = 1;
 		EXTI->PR |= (1<<1);  // Clear the interrupt flag by writing a 7 
